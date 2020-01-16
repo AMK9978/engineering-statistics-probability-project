@@ -1,0 +1,23 @@
+plot(cars)
+scatter.smooth(x=cars$speed,xlab = "سرعت", ylab =  "مسافت",  y = cars$dist, main ="نمودار مسافت-سرعت") 
+cov(cars$speed, cars$dist)
+mean(cars$speed)
+mean(cars$dist)
+var(cars$speed)
+var(cars$dist)
+linearMod <- lm(dist ~ speed, data=cars)  # build linear regression model on full data
+print(linearMod)
+summary(linearMod)
+
+confint(linearMod)
+deviance(linearModel)
+coef(linearMod)
+effects(linearMod)
+fitted(linearMod)
+plot(resid(linearMod))
+vcov(linearMod)
+data.lm = lm(cars$dist ~ cars$speed)
+anova(data.lm)
+new_datas <- rnorm(20, mean=mean(cars$speed))
+predict(linearMod, data.frame(speed = new_datas))
+
